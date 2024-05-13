@@ -27,7 +27,7 @@ p2p адресация может пересекаться в разных ЦО�
 
 Таким образом получаем следующие IP адреса для наших Loopback интерфейсов
 
-<table><tbody><tr><td>pd01-esp-001&nbsp;</td><td>10.1.1.1/24</td></tr><tr><td>pd01-esp-002&nbsp;</td><td>10.1.1.2/24</td></tr><tr><td>pd01-elf-001</td><td>10.1.2.1/24</td></tr><tr><td>pd01-elf-002&nbsp;</td><td>10.1.2.2/24</td></tr><tr><td>pd01-elf-003</td><td>10.1.2.3/24</td></tr></tbody></table>
+<table><tbody><tr><td>pd01-esp-001&nbsp;</td><td>10.1.1.1/32</td></tr><tr><td>pd01-esp-002&nbsp;</td><td>10.1.1.2/32</td></tr><tr><td>pd01-elf-001</td><td>10.1.2.1/32</td></tr><tr><td>pd01-elf-002&nbsp;</td><td>10.1.2.2/32</td></tr><tr><td>pd01-elf-003</td><td>10.1.2.3/32</td></tr></tbody></table>
 
 ### Servers network
 
