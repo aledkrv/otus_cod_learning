@@ -15,13 +15,13 @@
 
 Мы имеем следующую топологию:
 
-<img src="topology.png" alt="Topology" width="500"/>
+![Topology](topology.png)
 
 Конфигурация интерфейсов leaf коммутаторов. Ниже приведен пример настройки интерфейсов pd01-leaf-001. Другие leaf настраиваются аналогично, отличаются только IP адреса на интерфейсах.
 
 ```
 interface Ethernet1
-   description pd01-leaf-001 -> pd01-srv-001 
+   description pd01-leaf-001 -> pd01-srv-001
    no switchport
    ip address 10.1.10.1/24
 interface Ethernet7
@@ -96,27 +96,31 @@ interface LoopbackX
 
 Проверяем установление соседства на обеих Spine коммутаторах:
 
-<img src="sp1-ospf-nei.png" alt="spine1-neighbors" width="500"/>
-<img src="sp2-ospf-nei.png" alt="spine2-neighbors" width="500"/>
+![spine1-neighbors](sp1-ospf-nei.png)
+
+![spine2-neighbors](sp2-ospf-nei.png)
 
 Проверяем маршруты, полученные по OSPF на Spine коммутаторах:
-<details>
-<summary>show ip route ospf</summary>
-<img src="sp1-ospf-rou.png" alt="spine1-ospf-routes" width="500"/>
-<img src="sp2-ospf-rou.png" alt="spine2-ospf-routes" width="500"/>
-</details>
+
+show ip route ospf
+
+![spine1-ospf-routes](sp1-ospf-rou.png)
+
+![spine2-ospf-routes](sp2-ospf-rou.png)
 
 Проверяем доступность между всеми серверами:
-<details>
-<summary>ping results</summary>
-<img src="srv1-ping-all.png" alt="pd01-srv-001" width="500"/>   
-<img src="srv2-ping-all.png" alt="pd01-srv-002" width="500"/>   
-<img src="srv3-ping.png" alt="pd01-srv-003" width="500"/>
-</details>
+
+ping results
+
+![pd01-srv-001](srv1-ping-all.png)
+
+![pd01-srv-002](srv2-ping-all.png)
+
+![pd01-srv-003](srv3-ping.png)
 
 Выполним трассировку между pd01-srv-001 и pd01-srv-004
 
-<img src="srv1-srv4-trace.png" alt="pd01-srv-003" width="500"/>
+![pd01-srv-003](srv1-srv4-trace.png)
 
 Как видно из трассировки, наш пакет сначала попал на шлюз хоста, который находится на pd01-leaf-001 Et1(10.1.10.1), далее он отправился на pd01-spine-001 Et1(169.254.254.0), затем на pd01-leaf-003(Et8) и пришел на хост pd01-srv-004.
 
