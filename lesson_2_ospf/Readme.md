@@ -14,11 +14,16 @@
 ### Настройка IP адресов
 
 Мы имеем следующую топологию:
+
 <img src="topology.png" alt="Topology" width="500"/>
 
 Конфигурация интерфейсов leaf коммутаторов. Ниже приведен пример настройки интерфейсов pd01-leaf-001. Другие leaf настраиваются аналогично, отличаются только IP адреса на интерфейсах.
 
 ```
+interface Ethernet1
+   description pd01-leaf-001 -> pd01-srv-001 
+   no switchport
+   ip address 10.1.10.1/24
 interface Ethernet7
   description pd01-leaf-001 -> pd01-spine-001
   no switchport
@@ -34,7 +39,11 @@ interface Loopback0
 !
 interface Loopback1
   ip address 10.1.2.101/32
+```
+
 Конфигурация интерфейсов spine коммутаторов. Ниже приведен пример настройки интерфейсов pd01-spine-001. Другие spine настраиваются аналогично, отличаются только IP адреса на интерфейсах.
+
+```
 interface Ethernet1
   description pd01-spine-001 -> pd01-leaf-001
   no switchport
@@ -59,7 +68,7 @@ interface Loopback1
 
 ### Настройка OSPF
 
-Включаем OSPF на коммутаторах и назначем им router-id аналогичный loopback0. Ниже приведен пример настройки OSPF на pd01-spine-001. Другие коммутаторы настраиваются аналогично, отличаются только IP адреса router-id.
+Включаем OSPF на коммутаторах и назначаем им router-id аналогичный loopback0. Ниже приведен пример настройки OSPF на pd01-spine-001. Другие коммутаторы настраиваются аналогично, отличаются только IP адреса router-id.
 
 ```
 router ospf 1
@@ -101,6 +110,7 @@ interface LoopbackX
 <details>
 <summary>ping results</summary>
 <img src="srv1-ping-all.png" alt="pd01-srv-001" width="500"/>
+
 <img src="srv2-ping-all.png" alt="pd01-srv-002" width="500"/>
 <img src="srv3-ping.png" alt="pd01-srv-003" width="500"/>
 </details>
