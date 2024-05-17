@@ -13,6 +13,9 @@
 
 ### Настройка IP адресов
 
+Мы имеем следующую топологию:
+<img src="topology.png" alt="Topology" width="500"/>
+
 Конфигурация интерфейсов leaf коммутаторов. Ниже приведен пример настройки интерфейсов pd01-leaf-001. Другие leaf настраиваются аналогично, отличаются только IP адреса на интерфейсах.
 
 ```
@@ -84,8 +87,8 @@ interface LoopbackX
 
 Проверяем установление соседства на обеих Spine коммутаторах:
 
-![spine1-neighbors](sp1-ospf-nei.png)
-![spine2-neighbors](sp2-ospf-nei.png)
+<img src="sp1-ospf-nei.png" alt="spine1-neighbors" width="500"/>
+<img src="sp2-ospf-nei.png" alt="spine2-neighbors" width="500"/>
 
 Проверяем маршруты, полученные по OSPF на Spine коммутаторах:
 <details>
@@ -106,4 +109,8 @@ interface LoopbackX
 
 <img src="srv1-srv4-trace.png" alt="pd01-srv-003" width="500"/>
 
-Как видно из трассировки, наш пакет сначала попал на шлюз хоста, который находится на pd01-leaf-001 Et1(10.1.10.1), далее он отправился на pd01-spine-001 Et1(169.254.254.0), затем на pd01-leaf-003(Et8) и пришел на хост pd01-srv-004
+Как видно из трассировки, наш пакет сначала попал на шлюз хоста, который находится на pd01-leaf-001 Et1(10.1.10.1), далее он отправился на pd01-spine-001 Et1(169.254.254.0), затем на pd01-leaf-003(Et8) и пришел на хост pd01-srv-004.
+
+---
+
+конфигурационные файлы устройств доступны в папке [lab_ospf_configs](https://github.com/aledkrv/otus_cod_learning/tree/main/lesson_2_ospf/lab_ospf_configs)
