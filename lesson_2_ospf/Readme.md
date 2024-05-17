@@ -102,21 +102,11 @@ interface LoopbackX
 
 Проверяем маршруты, полученные по OSPF на Spine коммутаторах:
 
-show ip route ospf
-
-![spine1-ospf-routes](sp1-ospf-rou.png)
-
-![spine2-ospf-routes](sp2-ospf-rou.png)
+show ip route ospf![spine1-ospf-routes](sp1-ospf-rou.png) ![spine2-ospf-routes](sp2-ospf-rou.png)
 
 Проверяем доступность между всеми серверами:
 
-ping results
-
-![pd01-srv-001](srv1-ping-all.png)
-
-![pd01-srv-002](srv2-ping-all.png)
-
-![pd01-srv-003](srv3-ping.png)
+ping results![pd01-srv-001](srv1-ping-all.png) ![pd01-srv-002](srv2-ping-all.png) ![pd01-srv-003](srv3-ping.png)
 
 Выполним трассировку между pd01-srv-001 и pd01-srv-004
 
