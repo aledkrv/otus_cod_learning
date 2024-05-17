@@ -15,7 +15,7 @@
 
 Мы имеем следующую топологию:
 
-![Topology](topology.png)
+![Topology](images/topology.png)
 
 В конфигурации будет использовано 2 Loopback интерфейса на каждом коммутаторе, т. к. best practice является использовать разные loopback адреса для underlay(маршрутизация) и overlay(напр. VXLAN) сервисов.
 
@@ -103,28 +103,28 @@ interface LoopbackX
 
 Проверяем установление соседства на обеих Spine коммутаторах:
 
-![spine1-neighbors](sp1-ospf-nei.png)
+![spine1-neighbors](images/sp1-ospf-nei.png)
 
-![spine2-neighbors](sp2-ospf-nei.png)
+![spine2-neighbors](images/sp2-ospf-nei.png)
 
 
 Проверяем маршруты, полученные по OSPF на Spine коммутаторах:
 <details>
   <summary>show ip route ospf</summary>
-  <img src="sp1-ospf-rou.png" alt="spine1-routes" width="500"/><br>
-  <img src="sp2-ospf-rou.png" alt="spine2-routes" width="500"/><br>
+  <img src="images/sp1-ospf-rou.png" alt="spine1-routes" width="500"/><br>
+  <img src="images/sp2-ospf-rou.png" alt="spine2-routes" width="500"/><br>
 </details>
 
 Проверяем доступность между всеми серверами:
 <details>
   <summary>ping results</summary>
-  <img src="srv1-ping-all.png" alt="pd01-srv-001-pings" width="500"/><br>
-  <img src="srv2-ping-all.png" alt="pd01-srv-002-pings" width="500"/><br>
-  <img src="srv3-ping.png" alt="pd01-srv-003-pings" width="500"/><br>
+  <img src="images/srv1-ping-all.png" alt="pd01-srv-001-pings" width="500"/><br>
+  <img src="images/srv2-ping-all.png" alt="pd01-srv-002-pings" width="500"/><br>
+  <img src="images/srv3-ping.png" alt="pd01-srv-003-pings" width="500"/><br>
 </details>
 Выполним трассировку между pd01-srv-001 и pd01-srv-004
 
-![pd01-srv-003](srv1-srv4-trace.png)
+![pd01-srv-003](images/srv1-srv4-trace.png)
 
 Как видно из трассировки, наш пакет сначала попал на шлюз хоста, который находится на pd01-leaf-001 Et1(10.1.10.1), далее он отправился на pd01-spine-001 Et1(169.254.254.0), затем на pd01-leaf-003(Et8) и пришел на хост pd01-srv-004.
 
