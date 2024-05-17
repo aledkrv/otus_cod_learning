@@ -109,9 +109,8 @@ interface LoopbackX
 Проверяем доступность между всеми серверами:
 <details>
 <summary>ping results</summary>
-<img src="srv1-ping-all.png" alt="pd01-srv-001" width="500"/>
-
-<img src="srv2-ping-all.png" alt="pd01-srv-002" width="500"/>
+<img src="srv1-ping-all.png" alt="pd01-srv-001" width="500"/>   
+<img src="srv2-ping-all.png" alt="pd01-srv-002" width="500"/>   
 <img src="srv3-ping.png" alt="pd01-srv-003" width="500"/>
 </details>
 
@@ -123,4 +122,4 @@ interface LoopbackX
 
 ---
 
-конфигурационные файлы устройств доступны в папке [lab_ospf_configs](https://github.com/aledkrv/otus_cod_learning/tree/main/lesson_2_ospf/lab_ospf_configs)
+Конфигурационные файлы устройств доступны в папке [lab_ospf_configs](https://github.com/aledkrv/otus_cod_learning/tree/main/lesson_2_ospf/lab_ospf_configs)
