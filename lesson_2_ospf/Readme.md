@@ -83,3 +83,27 @@ interface LoopbackX
 ## Проверка
 
 Проверяем установление соседства на обеих Spine коммутаторах:
+
+![spine1-neighbors](sp1-ospf-nei.png)
+![spine2-neighbors](sp2-ospf-nei.png)
+
+Проверяем маршруты, полученные по OSPF на Spine коммутаторах:
+<details>
+<summary>show ip route ospf</summary>
+<img src="sp1-ospf-rou.png" alt="spine1-ospf-routes" width="500"/>
+<img src="sp2-ospf-rou.png" alt="spine2-ospf-routes" width="500"/>
+</details>
+
+Проверяем доступность между всеми серверами:
+<details>
+<summary>ping results</summary>
+<img src="srv1-ping-all.png" alt="pd01-srv-001" width="500"/>
+<img src="srv2-ping-all.png" alt="pd01-srv-002" width="500"/>
+<img src="srv3-ping.png" alt="pd01-srv-003" width="500"/>
+</details>
+
+Выполним трассировку между pd01-srv-001 и pd01-srv-004
+
+<img src="srv1-srv4-trace.png" alt="pd01-srv-003" width="500"/>
+
+Как видно из трассировки, наш пакет сначала попал на шлюз хоста, который находится на pd01-leaf-001 Et1(10.1.10.1), далее он отправился на pd01-spine-001 Et1(169.254.254.0), затем на pd01-leaf-003(Et8) и пришел на хост pd01-srv-004
