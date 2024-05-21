@@ -86,4 +86,4 @@ router isis UNDERLAY
 
 <img src="images/srv1-trc.png" alt="Trace result" width="500"/><br>
 
-Конфигурационные файлы устройств доступны [по ссылке] (https://github.com/aledkrv/otus_cod_learning/tree/main/lesson_3_isis/lab_isis_configs)
+Конфигурационные файлы устройств доступны [по ссылке](https://github.com/aledkrv/otus_cod_learning/tree/main/lesson_3_isis/lab_isis_configs)
