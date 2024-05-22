@@ -66,14 +66,16 @@ router isis UNDERLAY
   <img src="images/sp1-isis-db.png" alt="spine1-isis-database" width="500"/><br>
   <img src="images/sp2-isis-db.png" alt="spine2-isis-database" width="500"/><br>
 </details>
+В дампе можно посмотреть LSP и увидеть какие сети передаются от пира.<br>
+<img src="images/lsp-sp1.png" alt="LSP" width="500"/><br>
 
 Проверяем авторизацию. <br>
 В процессе, когда на pd01-spine-001 и pd01-leaf-001 была настроена авторизация, в логах pd01-spine-001 видели ошибки аутентификации CSN.<br>
 <img src="images/auth-err.png" alt="spine1-log-errors" width="500"/><br>
 В дампе видим что от pd01-leaf-001 отправляются CSN c аутентификацией.<br>
 <img src="images/auth-csn-dump.png" alt="CSN-with-auth" width="500"/><br>
-Так же в дампе можно посмотреть LSP и увидеть какие сети передаются от пира.<br>
-<img src="images/lsp-sp1.png" alt="LSP" width="500"/><br>
+Проверяем isis database. Здесь можно увидеть что на всех пирах настроена аутентификация:<br>
+<img src="images/sp1-db-auth.png" alt="DB auth" width="500"/><br>
 
 В финале проверяем связность между хостами.<br>
 <img src="images/srv1-ping.png" alt="Ping result" width="500"/><br>
