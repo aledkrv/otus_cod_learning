@@ -139,4 +139,4 @@ interface Vxlan1
 </details>
 
 Настройка EVPN L2 завершена. 
-конфигурационные файлы устройств доступны [по ссылке](https://github.com/aledkrv/otus_cod_learning/tree/main/lesson_5_evpnl2/lab_evpn_l2_configs) 
+Конфигурационные файлы устройств доступны [по ссылке](https://github.com/aledkrv/otus_cod_learning/tree/main/lesson_5_evpnl2/lab_evpn_l2_configs) 
