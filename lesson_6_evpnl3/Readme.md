@@ -114,7 +114,7 @@ vrf OTUS
 <image src=images/srv3-rping-succ.png width="500"/><br>
 Посмотрим на таблицу маршрутизации evpn, можно увидеть mac-ip наших хостов.
 <image src=images/show-bgp-evpn.png width="500"/><br>
-Так же в arp таблице VRF видны маки, изученные через vxlan
+Так же в arp таблице VRF видны маки, изученные через vxlan<br>
 <image src=images/arp-vrf.png width="500"/><br>
 
 Конфигурация всех устройств доступна по [ссылке](https://github.com/aledkrv/otus_cod_learning/tree/main/lesson_6_evpnl3/lab_evpn_l3_configs)
