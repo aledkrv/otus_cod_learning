@@ -112,7 +112,7 @@ vrf OTUS
 Проверяем что с pd01-srv-003 доступны хосты pd01-srv-004 и pd01-srv-005
 
 <image src=images/srv3-rping-succ.png width="500"/><br>
-Посмотрим на таблицу маршрутизации evpn, можно увидеть mac-ip наших хостов.
+Посмотрим на таблицу маршрутизации evpn, можно увидеть mac-ip наших хостов.<br>
 <image src=images/show-bgp-evpn.png width="500"/><br>
 Так же в arp таблице VRF видны маки, изученные через vxlan<br>
 <image src=images/arp-vrf.png width="500"/><br>
