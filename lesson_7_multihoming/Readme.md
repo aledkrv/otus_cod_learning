@@ -43,7 +43,7 @@ interface Ethernet3
 *   Route-Type 1 - Ethernet Auto-Discovery route
 *   Route-Type 4 - Ethernet Segment route
 
-Настройка Port-Channel на pd01-leaf-001 и pd01-leaf-002 в сторону pd01-access-001. конфигурация Ethernet порта и Port-channel идентична на обеих устройствах
+Настройка Port-Channel на pd01-leaf-001 и pd01-leaf-002 в сторону pd01-access-001. Конфигурация Ethernet порта и Port-channel идентична на обеих устройствах:
 
 ```
 interface Ethernet1
@@ -72,7 +72,11 @@ evpn ethernet-segment
       route-target import 11:11:11:11:11:11
 ```
 
-Видим что в evpn стали отправляться RT4 маршруты с идентификатором нашего ethernet-segment![](images/leaf-rt4.png)  
+Видим что в evpn стали отправляться RT4 маршруты с идентификатором нашего ethernet-segment
+<details>
+<summary>show bgp evpn route-type ethernet-segment</summary>
+<image src=images/leaf-rt4.png width="500"/><br>
+</details><br> 
   
  
 
@@ -127,7 +131,11 @@ EVPN instance: VLAN 10
 
 В нашем случае DF это pd01-leaf-001
 
-А так выглядит дамп пакета с route-type 4 маршрутом![](images/dump-rt4.png)  
+<details>
+<summary>А так выглядит дамп пакета с route-type 4 маршрутом</summary>
+<image src=images/dump-rt4.png width="500"/><br>
+</details><br> 
+
   
  
 
@@ -143,16 +151,27 @@ EVPN instance: VLAN 10
 
 Посмотрим на маршруты route-type 1 на pd01-leaf-001
 
-show bgp evpn route-type auto-discovery![](images/leaf-rt1.png)  
+<details>
+<summary>show bgp evpn route-type auto-discovery</summary>
+<image src=images/leaf-rt1.png width="500"/><br>
+</details><br> 
   
-Здесь мы видим как общие route-type 1, так и per EVI. Рассмотрим один из них еще подробнееshow bgp evpn route-type auto-discovery rd 10.1.2.102:10020 detail![](images/leaf-rt1-detail.png)  
+Здесь мы видим как общие route-type 1, так и per EVI. Рассмотрим один из них еще подробнее
+<details>
+<summary>show bgp evpn route-type auto-discovery rd 10.1.2.102:10020 detail</summary>
+<image src=images/leaf-rt1-detail.png width="500"/><br>
+</details><br> 
+ 
   
 Видим что для данного маршрута доступны 2 пути, через pd01-spine-001 и pd01-spine-002
 
 Чтобы окончательно убедиться что все работает - проверим связность между хостами выполнив ping от pd01-srv-002 к pd01-srv-001
 
-ping result![](images/leaf-rt1-detail.png)  
-  
+<details>
+<summary>ping result</summary>
+<image src=images/leaf-rt1-detail.png width="500"/><br>
+</details><br> 
+
  
 
 Связность есть.
