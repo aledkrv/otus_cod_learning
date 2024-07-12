@@ -218,14 +218,14 @@ router bgp 4200103001
 Так выглядят Route-type 5 маршруты на pd01-leaf-001, и таблицы маршрутизации для VRF А и B 
 <details>
 <summary>show bgp evpn route-type ip-prefix ipv4</summary>
-<image src=images/lf-rt5.png width="500"/><br>
+<image src=images/lf1-rt5.png width="500"/><br>
 </details><br> 
 <details>
 <summary>show ip route vrf </summary>
 <image src=images/lf-vrf-rt.png width="500"/><br>
 </details><br> 
 
-В дампе мы можем увидеть BGP Update с Route-type 5 
+В дампе мы можем увидеть BGP Update с Route-type 5 </br>
 <image src=images/rt5-packet.png width="500"/>
 
 Конфигурация устройств доступна [по ссылке](https://github.com/aledkrv/otus_cod_learning/tree/main/lesson_8_RT5/lab_RT5_configs)
